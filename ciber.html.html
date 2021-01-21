@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciber</title>
+</head>
+<body>
+    <script>
+        // exercici 1 -Mostrar per consola un 'Hola mundo'
+        var frase="Hola Mundo";
+        console.log(frase);
+        // exercici 2 -Crea un alert que mostri el teu nom:
+         frase= "Me llamo Sara!";
+        alert(frase);
+        // exercici 3 - Crea una variable que contingui el teu nom i un altre que contingui el teu cognom.
+        var nombre="Sara";
+        var cognom="Righetti";
+        console.log(nombre + " " + cognom);
+        // exercici 4 - Crea dos variables amb dos números i fes una suma entre ells.
+        var numero1= 34;
+        var numero2= 56;
+        var resultado= numero1 + numero2;
+        console.log("La suma entre " + numero1 + " i " + numero2 + " es " + resultado);
+
+        // exercici 5 - Crea una variable nota_examen juntament amb un alert 
+        // que ens digui si l’examen ha estat aprovat o no juntament amb la nota. 
+        //(caldrà utilitzar un condicional IF)
+        var nota = parseFloat(prompt("Introduca la nota del examen"));            
+        while((nota >10) || (nota<0) || isNaN(nota)){
+         nota=parseFloat(prompt("ERROR: Asegurese de haber escrito la nota correcta. Introduzca la nota en numero"));
+        }if ((nota <=10) && ( nota >=6) && !isNaN(nota)){
+       alert("Has aprobado el examen con un " + nota);
+       console.log("Has aprobado el examen con un " + nota);
+    }else{
+      alert("Has suspendido el examen con un " + nota);
+      console.log("Has suspendido el examen con un "+nota)
+    }
+        // exercici 6 - Reemplaça la paraula blau per la paraula verd del següent text Tinc un cotxe de color blau. 
+        //Després intenta fer-ho remplaçant les o per les u.   / Metodo repalce()
+        let string;
+        string="Tinc un coxte de color blau";
+        console.log(string);
+       string = string.replace("blau","verde");
+       console.log(string);
+        string=string.replace(/["o"]/gi,"u");
+        console.log(string);
+
+        // exercici 7 - Crea un bucle que mostri per pantalla cada objecte i la seva posició al llistat.
+        let objectes=["taula", "cadira", "ordinador", "libreta"];
+        let text="";
+        for(let i=0; i<objectes.length;i++){
+         console.log("L'objecte " + objectes[i] + " està a la posiciò " + i);          
+        }
+        // exercici 8 - Crea una funció anomenada calculadora
+        let operador1=parseFloat(prompt("Introduce el primer numero"));
+        let operador2=parseFloat(prompt("Introduce el segundo numero"));
+        var operacion=prompt("Que operacion desea realizar? Escribas: + , -, *,  /");
+        var resultado;
+        function suma(num1, num2){   
+            resultado = num1+num2;        
+            console.log("La suma es: " + resultado);
+            document.querySelector("body").innerHTML = " El resultado de la suma de " + num1 + " + " + num2 +" es = " + resultado; 
+        }
+        function resta(num1, num2){   
+            resultado = num1-num2;     
+           console.log("La resta es: " + resultado);
+           document.querySelector("body").innerHTML = "El resultado de laa resta de " + num1 + " - " + num2 +" es = " + resultado;
+        }
+        function multiplicacion(num1, num2){       
+            resultado = num1*num2;    
+            console.log("La multiplicacion es: " + resultado);
+           document.querySelector("body").innerHTML = "El resultado de la multiplicacion de " + num1 + " * " + num2 +" es = " + resultado;
+        }
+        function division(num1, num2){      
+            resultado = num1/num2;     
+            console.log("La divisiona es: " + resultado);
+           document.querySelector("body").innerHTML = "El resultado de la division de " + num1 + " / " + num2 +" es = " + resultado;
+        }
+        while((operacion !="+") && (operacion !="-") && (operacion !="*") && (operacion != "/")) {
+            operacion=parseFloat(prompt("ERROR: Escribas: + , -, *,  /" ));
+        }                      
+        switch(operacion){
+        case "+":
+            suma(operador1, operador2);
+            break;
+        case "-":
+            resta(operador1, operador2);
+            break;
+        case "*":
+            multiplicacion(operador1, operador2);
+            break;
+        case "/": 
+            division(operador1, operador2);
+            break;   
+    }    
+    </script>
+</body>
+</html>
